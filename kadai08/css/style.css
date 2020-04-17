@@ -1,0 +1,884 @@
+@charset "utf-8";
+
+
+/* =Reset default browser CSS.
+Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {border: 0;font-family: inherit;font-size: 100%;font-style: inherit;font-weight: inherit;margin: 0;outline: 0;padding: 0;vertical-align: baseline;}
+:focus {outline: 0;}
+
+ol, ul {list-style: none;}
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {font-weight: normal;text-align: left;}
+blockquote:before, blockquote:after,q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+a img{border: 0;}
+figure{margin:0}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}*/
+/* -------------------------------------------------------------- */
+
+/* body */
+body,
+html{
+  width: 1349px;
+  height: auto;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+article{
+  width: 100%;
+}
+/*文字*/
+#a h1 {
+  margin: 0;
+  font-size: 20px;
+}
+/* 基本レイアウト */
+
+.wrapper {
+  width: 100%;
+}
+/* メインイメージ*/
+.main_images img{
+  width: 100%;
+  height: 560px;
+}
+
+/*************パララックスの代わりになる*****************/
+#a{
+    width: 100%;
+    height: 700px;
+}
+
+#c{
+  width: 100%;
+  height: 390px;
+}
+
+#b{
+  width: 100%;
+  height: 330px;
+}
+#d{
+  width: 100%;
+  height: 1200px;
+  background-color: rgba(255,255,255,0.7);
+  overflow: hidden;
+}
+
+#e{
+    width: 100%;
+    height: 100%;
+}
+#f{
+    width: 100%;
+    height: 700px;
+}
+
+
+#f{
+    background-color: rgba(0,0,0,0.9);
+}
+
+/**************ナビゲーション***************/
+
+.title img {
+  height: 100px;
+  padding-left: 30px;
+}
+.title {
+  float: left;
+}
+.navigation{
+  display: inline-block;
+  float:left;
+  text-align: right;
+  font-size: 20px;
+  height: 100px;
+  width: 100%;
+  background-color: #000;
+ 
+}
+.navigation ul{
+  margin: 0 ;
+  padding-top: 35px;
+}
+
+.navigation a {
+  color: #000;
+}
+.navigation li {
+  display:inline-block;
+  padding-left: 50px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.navigation li:hover {
+  color: red;
+}
+/*  リンク設定 */
+
+/**************パララックス***************/
+.one{
+  background: url(../images/japan-1.png) no-repeat fixed; 
+  background-color: #fff;
+  width: 100%;
+  height: 1200px;
+  background-position: 50%;
+  background-size: cover;
+}
+
+.two {
+  background: url(../images/parallax1.jpg) no-repeat fixed; 
+  background-position: 50%;
+  background-size: cover;
+}
+
+.three {
+  background: url(../images/tiketto.jpg) no-repeat fixed; 
+  background-position: 50%;
+  background-size: cover;
+}
+
+
+.last {
+  background: url(../images/allll.jpg) no-repeat fixed; 
+  background-position: 50%;
+  background-size: cover;
+} 
+
+
+.last1 {
+  background: url(../images/nj1.jpg) no-repeat fixed; 
+  background-position: 50%;
+  background-size: cover;
+} 
+
+
+/****************試合日程とスライドショー****************/
+.match {
+  background-color: rgba(255,255,255,0.6);
+  height: 420px;
+}
+.match h3{
+  font-size: 56px;
+  margin-left: 30px;
+}
+#b{
+  font-size: 40px;
+  color: #000;
+  padding: 30px 0;
+}
+.sliderBox {
+  overflow: hidden;
+  position: relative;
+}
+
+*{margin:0;padding: 0;}
+
+/*sliderのアニメーションを指定*/
+/*アニメーションの開始位置を指定*/
+@keyframes slider{
+  0%{
+    top:0px;
+    left:0px;
+  }
+/*アニメーションの終了位置を指定*/
+/*画像10枚分のwidthをスライドさせ、開始の画像が4枚表示された時にリピート開始*/
+    100%{
+    top:0px;
+    left: -50%;
+  }
+}
+
+.sliderBox{
+/*スライダーの枠を設定する*/
+/*幅を画像4枚分のwidthに指定することでループする際にコマ切れをなくす(変なところでループする)*/
+  width:100%;
+  overflow: hidden;
+/*表示したい画像の高さ*/
+  height:200px;
+  /*border:1px solid #000;*/
+
+/*ボックスからはみ出た画像は表示されない*/
+
+/*中央寄せ*/
+  right: 0%;
+}
+
+.sliderBox img {
+  width: 280px;
+}
+.sliderBox ul{
+/*画像8枚分の長さ*/
+  width: 100%;
+  height: 158px;
+  list-style-type: none;
+  padding: 40px 0 40px 0;
+  position: relative;
+  right: 100%;
+  margin-left: 200px;
+/*ボックスを親に設定した位置にするため(要素の位置を動かすためにpositionを設定＝スライドさせるため)*/
+  animation-name: slider;
+/*再生秒数を指定(スライドする速さに影響)*/
+  animation-duration: 10s;
+/*無限ループ再生*/
+  animation-iteration-count: infinite;
+/*速度を均一にする*/
+  animation-timing-function: linear;
+}
+
+/*float:leftで並んだ13枚の画像幅は250px*13=3500px*/
+.sliderBox ul li{
+  float: left;
+}
+
+.sliderBox li {
+  margin:0 10px;  
+}
+
+
+
+#e{
+  overflow: hidden;
+}
+
+/*************出場国一覧***************/
+
+ .country_image1 img {
+    -moz-transition: -moz-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -ms-transition: -ms-transform 0.5s linear;
+    transition: transform 0.5s linear;
+ }
+ .country_image1 img:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/*
+video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    z-index: -100;
+}
+*/
+#video{
+  width: 1349px;
+  position: fixed;
+  z-index: -1;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+}
+
+/****************スタジアム****************/
+
+  a[target="_blank"] ;
+
+
+.stadium-all{
+  width: 100%;
+  height: 1200px;
+  
+}
+
+.stadium-all h3{
+  font-size: 56px;
+  margin-left: 30px;
+  padding-top: 30px;
+}
+.stadium-all h4{
+  font-size: 12px;
+  text-align: center;
+}
+
+.stadium-all span{
+  font-size: 16px;
+  text-align: center;
+}
+
+.stadium-all img{
+  width: 200px;
+}
+
+.stadium-all li {
+  list-style: none;
+}
+.stadium ul {
+  width: 700px;
+  height: 200px;
+  float: right;
+  margin-right: 85px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.stadium li{
+  float: left;
+  color: #000;
+  position: relative;
+  right: -11.6%;
+  margin-left: 50px;
+}
+
+.stadium1 ul {
+  width: 700px;
+  height: 200px;
+  float: right;
+  margin-right: 85px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.stadium1 li{
+  float: left;
+  color: #000;
+  position: relative;
+  right: -11.6%;
+  margin-left: 50px;
+  
+}
+
+.stadium2 ul {
+  width: 1349px;
+  height: 200px;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.stadium2 li{
+  float: left;
+  color: #000;
+  position: relative;
+  right: -10.8%;
+  margin-left: 50px;
+  
+}
+
+.stadium3 ul {
+  width: 100%;
+  height: 200px;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.stadium3 li{
+  float: left;
+  position: relative;
+  right: -10.8%;
+  color: #000;
+  margin-left: 50px;
+  
+}
+
+.stadium li img {
+    -moz-transition: -moz-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -ms-transition: -ms-transform 0.5s linear;
+    transition: transform 0.5s linear;
+ }
+ .stadium li img:hover {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+   background-color: rgba(0,0,0,0.6);
+}
+
+.stadium1 li img {
+    -moz-transition: -moz-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -ms-transition: -ms-transform 0.5s linear;
+    transition: transform 0.5s linear;
+ }
+ .stadium1 li img:hover {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+
+.stadium2 li img {
+    -moz-transition: -moz-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -ms-transition: -ms-transform 0.5s linear;
+    transition: transform 0.5s linear;
+ }
+ .stadium2 li img:hover {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.stadium3 li img {
+    -moz-transition: -moz-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -ms-transition: -ms-transform 0.5s linear;
+    transition: transform 0.5s linear;
+ }
+ .stadium3 li img:hover {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+/***********出場国及びプール*************/
+.country {
+  width: 100%;
+  height: 2000px;
+  background-color: black;
+  
+}
+
+.country_teamas{
+  width: 100%;
+}
+.country_teamas h3{
+  font-size: 56px;
+  color: #fff;
+  padding: 60px 0 30px 30px;
+}
+.puleA img{
+  width: 120px;
+}
+.pule-allA {
+  margin-left: 25px;
+}
+
+.pule-allA h4{
+  z-index: 20;
+  width: 515px;
+  margin-left: 515px;
+  font-size: 44px;
+  color: #fff;
+  margin-top: 30px
+}
+
+.puleA li{
+  float: left;
+  list-style: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 90px;
+}
+.puleA li p{
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+}
+
+.puleA ul{
+  width: 1100px;
+  height: 280px;
+  background-color: rgba(0,0,0,0.7);
+  margin-left: 40px;
+  z-index: 10;
+  margin-top: -50px;
+  border: 3px solid rgba(110,200,229,1.0);
+}
+
+
+.pule-backA{
+  width: 900px;
+  height: 100px;
+  background-color: rgba(110,200,229,1.0);
+  z-index: 0;
+  margin-top: -30px;
+  
+}
+
+
+/*プールB*/
+.puleB img{
+  width: 120px;
+}
+
+.pule-allB {
+  margin-right: 25px;
+}
+
+.pule-allB h4{
+  z-index: 20;
+  width: 515px;
+  margin-left: 530px;
+  font-size: 44px;
+  color: #fff;
+  margin-top: 70px;
+}
+
+.puleB li{
+  float: left;
+  list-style: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 90px;
+}
+.puleB li p{
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+}
+
+.puleB ul{
+  width: 1100px;
+  height: 280px;
+  float: right;
+  background-color: rgba(0,0,0,0.7);
+  margin-right: 40px;
+  z-index: 10;
+  margin-top: -50px;
+  margin-bottom: 70px;
+  border: 3px solid rgba(240,78,116,1.0);
+}
+
+.pule-backB{
+  float: right;
+  width: 900px;
+  height: 100px;
+  background-color: rgba(240,78,116,1.0);
+  z-index: 0;
+  margin-top: -30px;
+  
+}
+
+
+/*プールC*/
+.puleC img{
+  width: 120px;
+}
+
+.pule-allC {
+  margin-left: 25px;
+}
+.pule-allC h4{
+  z-index: 20;
+  width: 515px;
+  margin-left: 515px;
+  font-size: 44px;
+  color: #fff;
+  margin-top: 30px
+}
+
+.puleC li{
+  float: left;
+  list-style: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 90px;
+}
+.puleC li p{
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+}
+
+.puleC ul{
+  width: 1100px;
+  height: 280px;
+  background-color: rgba(0,0,0,0.7);
+  margin-left: 40px;
+  z-index: 10;
+  margin-top: -50px;
+  border: 3px solid rgba(48,217,195,1.0);
+}
+
+
+.pule-backC{
+  width: 900px;
+  height: 100px;
+  background-color: rgba(48,217,195,1.0);
+  z-index: 0;
+  margin-top: -30px;
+}
+
+
+/*プールD*/
+.puleD img{
+  width: 120px;
+}
+
+.pule-allD {
+  margin-right: 25px;
+}
+.pule-allD h4{
+  z-index: 20;
+  width: 515px;
+  margin-left: 550px;
+  font-size: 44px;
+  color: #fff;
+  margin-top: 70px;
+}
+
+.puleD li{
+  float: left;
+  list-style: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 90px;
+}
+
+.puleD li p{
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+}
+
+.puleD ul{
+  width: 1100px;
+  height: 280px;
+  float: right;
+  background-color: rgba(0,0,0,0.7);
+  margin-right: 40px;
+  z-index: 10;
+  margin-top: -50px;
+  margin-bottom: 70px;
+  border: 3px solid rgba(152,63,186,1.0);
+}
+
+
+.pule-backD{
+  float: right;
+  width: 900px;
+  height: 100px;
+  background-color: rgba(152,63,186,0.7);
+  z-index: 0;
+  margin-top: -30px;
+  
+}
+
+
+/*******************チケット****************/
+.ticket{
+  background-color: rgba(0,0,0,0.7);
+  padding-bottom: 70px;
+  padding-top: 30px;
+}
+.ticket-all a{
+  text-decoration: none;
+}
+.ticket h5:hover{
+  background-color: rgba(266,4,27,.7);
+  transition: 1.0s ;
+}
+.ticket-all{
+  width: 100%;
+  color: #fff;
+  margin: 0;
+}
+
+.ticket-all h3{
+  font-size: 56px;
+  padding: 30px 0 30px 30px;
+
+}
+
+.ticket-all h4{
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  
+}
+
+.ticket-all h4 span{
+  color: red;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.ticket-all p{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ticket h5{
+  width: 194px;
+  font-size: 32px;
+  color: #fde021;
+  text-align: center;
+  margin-left: 568px;
+  padding: 5px;
+  border:  3px solid rgba(255,255,255,1.0);
+}
+
+
+/****************グリッドレイアウト*********************/
+.grid-backgroundcolor{
+  width: 100%;
+  height: 1030px;
+  background-color: rgba(255,255,255,0.5);
+}
+.grid-all{
+  width: 1349px;
+  height: 1030px;
+  background-color: rgba(255,255,255,1.0);
+}
+
+.grid-all h3{
+  font-size: 56px;
+  padding: 30px 0 30px 30px;
+}
+
+.up-all{
+  width:100%;
+}
+.grid-up-left{
+  width: 600px;
+  padding-left: 66px;
+  padding-right: 8px;
+  float: left;
+  text-align: right;
+}
+
+.grid-1{
+  width: 246px;
+  height: 246px;
+  float: right;
+  padding-left: 16px; 
+  padding-bottom: 16px;
+}
+
+.grid-2{
+  width: 246px;
+  height: 246px;
+  float: right;
+  padding-left: 16px; 
+  padding-bottom: 16px;
+}
+
+.grid-3{
+  width: 510px;
+  height: 246px;
+  padding-bottom:16px;
+  margin: 0;
+  float: right;
+}
+
+/*右側*/
+.grid-up-right{
+  width: 600px;
+  padding-right: 67px;
+  padding-left: 8px;
+  float: left;
+  text-align: left;
+}
+
+.grid-4{
+  width: 246px;
+  height: 246px;
+  padding-right: 16px;
+  float: left;
+  padding-bottom:16px;
+}
+
+.grid-5{
+  width: 246px;
+  height: 246px;
+  float: left;
+  padding-bottom:16px; 
+}
+
+.grid-6{
+  width: 510px;
+  height: 246px;
+  margin: 0;
+  float: left;
+  padding-bottom: 16px;
+}
+
+/*一番下*/
+.grid-down{
+  width: 1349px;
+}
+
+.grid-7{
+  width: 667px;
+  height: 246px;
+  float: right;
+}
+
+.grid-8{
+  width: 400px;
+  height: 246px;
+  float: left;
+  margin-left: 156px;
+}
+
+/************フッターナビゲーション***********/
+.footer{
+  width: 1349px;
+  height: 660px;
+  text-align: center;
+  color: #fff;
+}
+
+footer h4{
+  font-size: 28px;
+  padding-top:50px;
+}
+
+footer h3{
+ font-size: 20px;
+  line-height: 0.75em;
+}
+
+.footer_navigation{
+  width: 100%;
+}
+.footer_navigation ul{
+  margin-top: 80px;
+}
+.footer_navigation li {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.footer_navigation li:hover{
+  color: red;
+}
+.SNS {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.SNS img {
+  width: 50px;
+}
+.SNS li{
+  display: inline-block;
+}
+
+small {
+  
+}
+
+.background{
+  background-color: rgba(0,0,0,0.8);
+  height: 660px;
+}
